@@ -1,7 +1,10 @@
 package org.example;
 
 public class TestChris {
+    public static String sayHi() {
+        return "hello im chris";
+    }
     public static void main(String[] args) {
-        System.out.println("hello im chris");
+        sayHi();
     }
 }
