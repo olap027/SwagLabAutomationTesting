@@ -1,37 +1,34 @@
 package SwagLabs.Login;
 
-import configuration.DriverConfig;
 import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import static configuration.DriverConfig.getDriverWait;
-import static utils.AppUtil.getElementWithPolling;
 
 public class LoginSteps {
 
-    private static WebDriver driver;
-    private static WebDriverWait wait ;
+    public static SwagLabLogin swagLabLogin;
 
-    private final static String USERNAME_FIELD = "/input[@id='user-name'";
     @BeforeAll
-    public static void setup(){
-        driver = DriverConfig.getChromeConfig();
-        wait = getDriverWait(driver);
-
-    }
-    @Given("I am Email - Login page")
-    public void Login(){
-        WebElement usernameField = getElementWithPolling(wait, By.ByXPath.xpath(USERNAME_FIELD));
-        usernameField.click();
+    public static void setUp() {
+        swagLabLogin = new SwagLabLogin();
 
     }
 
+    @Given("I will go to SwagLab")
+    public void i_will_go_to_swag_lab()  {
+        SwagLabLogin.gotoSwag();
+    }
+
+    @When("Enter credentials")
+    public void Enter_credentials() {
+        SwagLabLogin.credentials();
+    }
+
+    @When("User will navigate to products page")
+    public void User_will_navigate_to_products_page() {
+
+    }
 
 
 }

@@ -21,7 +21,7 @@
         <assertj.version>3.24.2</assertj.version>
         <hamcrest.version>2.2</hamcrest.version>
         <junit5.version>5.9.3</junit5.version>
-        <cucumber.version>7.11.1</cucumber.version>
+        <cucumber.version>7.13.0</cucumber.version>
     </properties>
 
 
